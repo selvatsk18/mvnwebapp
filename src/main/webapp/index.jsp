@@ -1,82 +1,110 @@
 <html>
-<!--This example uses the default bootstrap stylesheet-->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<!--provides a full-width container that can expand or collapse based on the size of viewport-->
-<div class="container-fluid">
-   <div class="row">
-       <div class="col-md-2 col-sm-12 col-xs-12">
-           <nav id="navbar">
-               <h3>Technical Documentation</h3>
-               <!--content stacking for smaller screens-->
-               <ul class="nav nav-pills nav-stacked">
-                <!--internal linking to the respective sections-->
-                   <a class="nav-link" href="#Introduction" rel="internal">
-                       <li>Introduction</li>
-                   </a>
-                   <a class="nav-link" href="#What_you_should_already_know" rel="internal">
-                       <li>What you should already know</li>
-                   </a>
-                   <a class="nav-link" href="#About_Topic" rel="internal">
-                       <li>About the topic</li>
-                   </a>
-                   <a class="nav-link" href="#Topic_1" rel="internal">
-                       <li>Topic 1</li>
-                   </a>
-                   <a class="nav-link" href="#Topic_2" rel="internal">
-                       <li>Topic 2</li>
-                   </a>
-                </ul>
-           </nav>
-       </div>
-       <div class="col-md-10 col-sm-12 col-xs-12">
-           <main id="main-doc">
-               <section class="main-section" id="Introduction" >
-                <!--basic styling for the headings, better practice to do the same in a css file as the styling is same for all headers-->
-                   <h3 style = "background: black; color: white">Introduction</h3>
-                   <article>
-                   <p>Some content about the main topic, for example Java documentation introduction about the language
-                       </article>
-               </section>
-               <section class="main-section" id="What_you_should_already_know">
-                   <h3 style = "background: black; color: white">What you should already know</h3>
-                   <article>
-                       <p>Background information before getting into the topic:</p>
-<!--creating list using html-->
-                       <li>Some list content</li>
-                       <li>Prerequisites.</li>
-                       <li>Workings and assumptions</li>
-                       <p>Any other content to be covered before learning this topic</p>
-                       </artice>
-               </section>
-               <section class="main-section" id="About_Topic">
-                   <h3 style = "background: black; color: white">About topic</h3>
-                   <article>
-                       <p>More lines about the topic. For example, how the basic functionality works, features etc...</p>
-                       <p>
-                       Technical documentation should be thorough and to the point
-                       </p>
-                       <p>
-                       Write about features, comparisons with other languages etc
-                       </p>
-                   </article>
-               </section>
-               <section class="main-section" id="Topic_1">
-                   <h3 style = "background: black; color: white">Topic 1</h3>
-                   <article>
-                       Getting started with the actual documentation content
-                       <code>This would come in a different color and font indicating lines of code
-                       </code>
-                   </article>
-               </section>
-               <section class="main-section" id="Topic_2">
-                   <h3 style = "background: black; color: white">Topic 2</h3>
-                   <p>
-Another topic about the main topic, for example, if the topic is Java, this could be variables or data types in Java
-                   </p>
-               </section>
-           </main>
-       </div>
-   </div>
+<head>
+   <style>
+       body{
+  font-size:20px;
+           color: white;
+           background-size: cover;
+       }
+        .box{ width: 900px;
+      float:right;
+      border:1px solid none;}
+      .box ul li{
+          width: 120px;
+          float:left;
+          margin: 10px auto;
+          text-align: center;
+      }
+.mainmenu
+.mainmenu a
+.mainmenu a:hover
+.mainmenu img{
+position: fixed;
+z-index: -1;
+top:0px; left:0px; width:100%; height: 100vh;
+opacity: 0.9;
+/*object-fit:cover;*/
+transition: all ease 0.5s;
+}
+  .wd{
+          width: 300px;
+          height: 539px;
+          background-color: black;
+          opacity: 0.8;
+          padding: 55px;
+      }
+      .wd h1{
+          text-align: center;
+          text-transform: uppercase;
+          font-weight: 300px;
+      }
+      .wd h4{
+          text-align: justify;
+          color:darkgray;
+          font-weight: 100px;
+      }
+      .wd h2{
+          text-align: center;
+          text-transform: uppercase;
+          font-weight: normal;
+          margin: 40px auto;
+      }
+      .opt form , input[type="button"]{
+          background-color: black;
+          color:white;
+        /* padding:10px;*/
+          margin:-14px auto;
+          padding-left: 50px;
+          padding-right: 50px;
+          text-align: center;
+          font-size: 16px;
+      }
+    form, input[type="button"] {
+      animation: glowing 300ms infinite;
+      font-weight: 500%;
+     }
+     @keyframes glowing {
+0% {
+  background-color: red;
+}
+50% {
+  background-color: orange;
+}
+100% {
+  background-color: blue;
+}
+}
+  </style>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(function(){
+var image = $(".mainmenu").find('img').attr('src');
+$(".mainmenu a").mouseover(function(){
+var newimg = $(this).attr('data-image');
+$(this).parent().find('img').attr("src", newimg);
+});
+});
+</script>
+  <div class="box">
+<div class="mainmenu">
+<img src="food.png">
+<a data-image = "food.png" href=""> Home</a>
+<a data-image = "menucard.jpg" href=""> Menu</a>
+<a href=""> FAQ</a>
+<a href=""> Contact</a>
 </div>
+  </div>
+  <div class="wd">
+<h1> Welcome to xxx</h1>
+<h4> <i>Order delicious food online, 100% quality, safety and taste assured.</i></h4>
+<h2> Call 999999999 for reservations</h2>
+<div class="opt">
+<form action="" method="post">
+<input type="button" value="ORDER NOW">
+</form>
+</div>
+</div>
+</body>
 </html>
